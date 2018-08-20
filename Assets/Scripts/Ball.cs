@@ -10,7 +10,12 @@ public class Ball : MonoBehaviour
     [SerializeField] Paddle paddle1;
     [SerializeField] float xVelOnClick = 2f;
     [SerializeField] float yVelOnClick = 15f;
+    [SerializeField] AudioClip[] ballSounds;
+
+    //state
     bool gameOn = false;
+    AudioSource myAudioSource;
+
 
     //state
     Vector2 diffToPaddle;
@@ -19,6 +24,7 @@ public class Ball : MonoBehaviour
     void Start()
     {
         diffToPaddle = transform.position - paddle1.transform.position;
+        myAudioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -46,6 +52,16 @@ public class Ball : MonoBehaviour
             gameOn = true;
             GetComponent<Rigidbody2D>().velocity = new Vector2(xVelOnClick, yVelOnClick);
         }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (gameOn)
+        {
+            AudioClip clip = ballSounds[UnityEngine.Random.Range(0, ballSounds.Length)];
+            myAudioSource.PlayOneShot(clip);
+        }
+           
     }
 
 
