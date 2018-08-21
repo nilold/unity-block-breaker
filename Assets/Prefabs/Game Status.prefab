@@ -52,3 +52,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameSpeed: 1
+  pointsPerBreak: 50
+  scoreText: {fileID: 0}
+  playerScore: 0
