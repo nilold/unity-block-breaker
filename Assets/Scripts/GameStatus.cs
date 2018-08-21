@@ -13,8 +13,21 @@ public class GameStatus : MonoBehaviour {
     // state
     [SerializeField]int playerScore = 0;
 
-	// Use this for initialization
-	void Start ()
+    private void Awake()
+    {
+        int gameStatusCount = FindObjectsOfType<GameStatus>().Length;
+
+        if(gameStatusCount > 1)
+        {
+            Destroy(gameObject);    
+        } else
+        {
+            DontDestroyOnLoad(gameObject);
+        }
+    }
+
+    // Use this for initialization
+    void Start ()
     {
         UpdatePlayerScore();
     }
