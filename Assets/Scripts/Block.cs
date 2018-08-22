@@ -3,7 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Block : MonoBehaviour {
+public class Block : MonoBehaviour
+{
 
     //config params
     [SerializeField] AudioClip destroyAudioClip;
@@ -56,7 +57,15 @@ public class Block : MonoBehaviour {
 
     private void ShowNextSPrite()
     {
-        GetComponent<SpriteRenderer>().sprite = hitSprites[hits];
+        if (hitSprites[hits] != null)
+        {
+            GetComponent<SpriteRenderer>().sprite = hitSprites[hits];
+        }
+        else
+        {
+            Debug.LogError(gameObject.name + ": Block sprite is missing from array");
+        }
+
     }
 
     private void DestroyBlock()
