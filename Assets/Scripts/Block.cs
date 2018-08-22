@@ -4,21 +4,39 @@ using UnityEngine;
 
 public class Block : MonoBehaviour {
 
+    //config params
     [SerializeField] AudioClip destroyAudioClip;
+    [SerializeField] GameObject blockSparflesVFX;
+    [SerializeField] int maxHits;
+
+    // cached reference
     Level level;
     GameSession gameSession;
-    [SerializeField] GameObject blockSparflesVFX;
+
+    //state variables
+    [SerializeField] int hits; //serialize for debug purposes TODO: remove
+
 
     private void Start()
     {
-        level = FindObjectOfType<Level>();
-        level.countBreakableBlocks();
         gameSession = FindObjectOfType<GameSession>();
+        CountBreakableBlocks();
+    }
+
+    private void CountBreakableBlocks()
+    {
+        if (tag == "Breakable")
+        {
+            level = FindObjectOfType<Level>();
+            level.countBlocks();
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        DestroyBlock();
+        hits++;
+        if(tag == "Breakable" && hits >= maxHits)
+            DestroyBlock();
 
     }
 

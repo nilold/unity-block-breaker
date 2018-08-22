@@ -14,7 +14,7 @@ public class Level : MonoBehaviour {
         //gameStatus = FindObjectOfType<GameStatus>();
     }
 
-    public void countBreakableBlocks()
+    public void countBlocks()
     {
         breakableBlocks++;
         //gameStatus.incrementPlayerScore();
