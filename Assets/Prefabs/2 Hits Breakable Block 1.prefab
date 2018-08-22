@@ -9,45 +9,45 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1229612045883744}
+  m_RootGameObject: {fileID: 1307734497580706}
   m_IsPrefabAsset: 1
---- !u!1 &1229612045883744
+--- !u!1 &1307734497580706
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4124993670200192}
-  - component: {fileID: 212675508401914094}
-  - component: {fileID: 61937704111809458}
-  - component: {fileID: 114490098193608828}
+  - component: {fileID: 4699741470594722}
+  - component: {fileID: 212468368793544688}
+  - component: {fileID: 61669413045810288}
+  - component: {fileID: 114498074729607876}
   m_Layer: 0
-  m_Name: Breakable Block
+  m_Name: 2 Hits Breakable Block 1
   m_TagString: Breakable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4124993670200192
+--- !u!4 &4699741470594722
 Transform:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1229612045883744}
+  m_GameObject: {fileID: 1307734497580706}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.25, y: -0.5, z: 0}
+  m_LocalPosition: {x: 2, y: 6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &61937704111809458
+--- !u!61 &61669413045810288
 BoxCollider2D:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1229612045883744}
+  m_GameObject: {fileID: 1307734497580706}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -67,12 +67,12 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &114490098193608828
+--- !u!114 &114498074729607876
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1229612045883744}
+  m_GameObject: {fileID: 1307734497580706}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6e524af77d7a840238d411e3b33c6ae8, type: 3}
@@ -80,12 +80,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destroyAudioClip: {fileID: 8300000, guid: 88a7e92d23f1b40e292f721685b47930, type: 3}
   blockSparflesVFX: {fileID: 100000, guid: 7d846c02296ef4dc4abff04ce3e5262c, type: 2}
---- !u!212 &212675508401914094
+  maxHits: 2
+  hitSprites:
+  - {fileID: 21300000, guid: 259725f984d4b4ce3934073dfbaf2cae, type: 3}
+  - {fileID: 21300000, guid: faf6e9763a4ea4f25923880527ef29ae, type: 3}
+  hits: 0
+--- !u!212 &212468368793544688
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1229612045883744}
+  m_GameObject: {fileID: 1307734497580706}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0

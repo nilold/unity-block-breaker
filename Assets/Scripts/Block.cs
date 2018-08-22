@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,6 +9,7 @@ public class Block : MonoBehaviour {
     [SerializeField] AudioClip destroyAudioClip;
     [SerializeField] GameObject blockSparflesVFX;
     [SerializeField] int maxHits;
+    [SerializeField] Sprite[] hitSprites;
 
     // cached reference
     Level level;
@@ -35,9 +37,26 @@ public class Block : MonoBehaviour {
     private void OnCollisionEnter2D(Collision2D collision)
     {
         hits++;
-        if(tag == "Breakable" && hits >= maxHits)
-            DestroyBlock();
+        if (tag == "Breakable")
+            HandleBreakHit();
 
+    }
+
+    private void HandleBreakHit()
+    {
+        if (hits >= maxHits)
+        {
+            DestroyBlock();
+        }
+        else
+        {
+            ShowNextSPrite();
+        }
+    }
+
+    private void ShowNextSPrite()
+    {
+        GetComponent<SpriteRenderer>().sprite = hitSprites[hits];
     }
 
     private void DestroyBlock()
