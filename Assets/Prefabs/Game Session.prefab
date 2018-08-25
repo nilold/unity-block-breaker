@@ -238,9 +238,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a114b530d3b2741de8e37ca32e3cfa06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameSpeed: 1
+  gameSpeed: 2
   pointsPerBreak: 50
   scoreText: {fileID: 114076077102462990}
+  enableAutoplay: 0
   playerScore: 0
 --- !u!222 &222147368780152350
 CanvasRenderer:

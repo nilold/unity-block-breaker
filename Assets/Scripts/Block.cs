@@ -9,7 +9,7 @@ public class Block : MonoBehaviour
     //config params
     [SerializeField] AudioClip destroyAudioClip;
     [SerializeField] GameObject blockSparflesVFX;
-    [SerializeField] int maxHits;
+    //[SerializeField] int maxHits;
     [SerializeField] Sprite[] hitSprites;
 
     // cached reference
@@ -45,6 +45,7 @@ public class Block : MonoBehaviour
 
     private void HandleBreakHit()
     {
+        int maxHits = hitSprites.Length;
         if (hits >= maxHits)
         {
             DestroyBlock();
